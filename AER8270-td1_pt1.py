@@ -165,7 +165,8 @@ analyticCP    = 1 - 4*np.sin(analyticTheta)**2                                  
 # Compute normal and axial force coefficients
 CN = -Cp*S*np.sin(beta)                                                         # Normal force coefficient []
 CA = -Cp*S*np.cos(beta)                                                         # Axial force coefficient []
-
+CL = sum(CN*np.cos(AoAR)) - sum(CA*np.sin(AoAR))                                # Decompose axial and normal to lift coefficient []
+CD = sum(CN*np.sin(AoAR)) + sum(CA*np.cos(AoAR))   
 #%% Plotting
 
 fig = plt.figure(1)                                                         # Create figure
